@@ -147,11 +147,16 @@ public class bankManagement {
 
                 con.commit();
                 return true;
-            }
-            catch (Exception e) {
+            } catch (SQLException e) {
                 e.printStackTrace();
-                con.rollback();
+                try {
+                    con.rollback();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            return false;
+        return false;
     }
 }

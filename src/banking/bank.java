@@ -23,9 +23,9 @@ public class bank {
                 switch (ch) {
                     case 1:
                         try {
-                            System.out.print("Enter username");
+                            System.out.print("Enter username: ");
                             name = sc.readLine();
-                            System.out.print("Enter password");
+                            System.out.print("Enter password: ");
                             pass_code = Integer.parseInt(sc.readLine());
                             if (bankManagement.createAccount(name, pass_code)) {
                                 System.out.println("MSG : Account has been created successfully!");
@@ -39,9 +39,9 @@ public class bank {
 
                     case 2:
                         try {
-                            System.out.print("Enter username");
+                            System.out.print("Enter username: ");
                             name = sc.readLine();
-                            System.out.print("Enter password");
+                            System.out.print("Enter password: ");
                             pass_code = Integer.parseInt(sc.readLine());
 
                             if (bankManagement.loginAccount(name, pass_code)) {
