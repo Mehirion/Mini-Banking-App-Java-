@@ -14,18 +14,18 @@ public class bank {
 
         while (true) {
             System.out.println("\n->|| Welcome to myBank ||<- \n");
-            System.out.println("1)Create account");
-            System.out.println("2)Log-in to an existing account");
+            System.out.println("      1) Create account (1");
+            System.out.println("2) Log-in to an existing account (2");
             try {
-                System.out.print("\n Enter input:");
+                System.out.print("\n Enter input: ");
                 ch = Integer.parseInt(sc.readLine());
 
                 switch (ch) {
-                    case 1:
+                    case 1 -> {
                         try {
                             System.out.print("Enter username: ");
                             name = sc.readLine();
-                            System.out.print("Enter password: ");
+                            System.out.print("Enter PIN *num only*: ");
                             pass_code = Integer.parseInt(sc.readLine());
                             if (bankManagement.createAccount(name, pass_code)) {
                                 System.out.println("MSG : Account has been created successfully!");
@@ -36,8 +36,8 @@ public class bank {
                             System.out.println("ERR : Enter valid data!");
                         }
                         break;
-
-                    case 2:
+                    }
+                    case 2 -> {
                         try {
                             System.out.print("Enter username: ");
                             name = sc.readLine();
@@ -53,9 +53,8 @@ public class bank {
                             System.out.print("ERR: Enter valid data");
                         }
                         break;
-
-                    default:
-                        System.out.print("Invalid entry\n");
+                    }
+                    default -> System.out.print("Invalid entry\n");
                 }
                 if (ch == 5) {
                     System.out.println("Exited successfully\n\n Thank you");
@@ -64,6 +63,7 @@ public class bank {
             } catch (Exception e) {
                 System.out.println("Enter valid entry");
             }
+
         }
 
         sc.close(); // Zamknięcie strumienia na końcu programu

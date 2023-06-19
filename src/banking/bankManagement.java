@@ -15,7 +15,7 @@ public class bankManagement {
     public static boolean createAccount(String name, int passCode)
     {
         try {
-        if (name == "" || passCode == NULL) {
+        if (name.equals("") || passCode == NULL) {
             System.out.println("All field required");
             return false;
         }
